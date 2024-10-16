@@ -1,0 +1,32 @@
+//файл обо всем нашем проекте
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* 10px/16px = 0,625,
+0,625 * 100% = 62.5%
+когда нам нужно, чтобы шрифт был 10px, если пользователь изменит размер шрифта у себя в браузере */
+html {
+  font-size: 62.5%;
+  @include respond(big-desktop) { //1rem=12px
+    font-size: 75%;
+  }
+  @include respond(tab-land) { //1rem=9px
+    font-size: 56.25%;
+  }
+  @include respond(tab-port) { //1rem=8px
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: $color-grey-dark;
+  line-height: 1.7;
+  box-sizing: border-box;
+}
